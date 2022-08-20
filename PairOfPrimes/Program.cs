@@ -1,4 +1,4 @@
-﻿void SieveOfEratosthenes(int n, IList<bool> isPrime)
+﻿void SieveOfEratosthenes(uint n, IList<bool> isPrime)
 {
     // There are no prime numbers below one and one it self is also not a prime number
     isPrime[0] = isPrime[1] = false;
@@ -15,7 +15,7 @@
 }
 
 
-int FindPrimePair(int n)
+int FindPrimePair(uint n)
 {
     // create an array of size n + 1
     var isPrime =  new bool[n + 1] ;
@@ -37,22 +37,16 @@ Console.Write("Please input a positive number: ");
 var num = Console.ReadLine();
 if (num != null)
 {
-    int number;
+    uint number;
     
     try
     {
-        number = int.Parse(num);
+        number = uint.Parse(num);
     }
     catch (Exception e)
     {
         Console.WriteLine(e.Message);
         return;
-    }
-    
-    if (number < 0)
-    {
-        Console.WriteLine($"Input '{num}' is not a positive number! Please try again.");
-        Environment.Exit(1);
     }
     
     var n = FindPrimePair(number);
